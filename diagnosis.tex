@@ -1,0 +1,69 @@
+\documentclass{article}
+\usepackage[UKenglish]{babel}
+\usepackage{url}
+\usepackage[T1]{fontenc}
+\usepackage{lineno} % used in genre
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{comment}
+\usepackage{graphics}
+\usepackage[hidelinks]{hyperref}
+
+\usepackage[backend=biber,style=apa,apamaxprtauth=7,doi=false,isbn=false,uniquename=false,url=false,bibencoding=utf8]{biblatex}
+\DeclareLanguageMapping{british}{british-apa}
+
+% no notes ??
+\AtEveryBibitem{%
+  \clearfield{note}%
+}
+\usepackage{xparse}
+\usepackage{csquotes}
+\usepackage[open]{bookmark}
+
+\addbibresource{references.bib}
+
+% i will stop using this soon.
+% it allows old style citing
+\newcommand{\citeNP}{\cite}
+\renewcommand{\cite}{\parencite}
+
+% make sure there's a comma after and in refs like proper apa
+\AtBeginDocument{\renewcommand\finalandcomma{\addcomma}}
+\AtBeginBibliography{%
+  \renewcommand*{\finalnamedelim}{%
+    \ifthenelse{\value{listcount}>\maxprtauth}
+      {}
+      {\finalandcomma\addspace\&\space}}}
+
+
+\author{Daniel McDonald}
+\date{\today}
+\title{Diagnosis discourse in an online bipolar community: a corpus linguistic exploration}
+
+\begin{document}
+
+\maketitle
+
+\section{Context}
+
+\section{Literature review}
+
+\subsection{Online health communities}
+
+\subsection{Diagnosis}
+
+\subsection{Corpus-based approaches to health discourse}
+
+\section{Case study}
+
+\section{Findings and discussion}
+
+\subsection{Qualitative exploration}
+
+\subsection{Corpus analysis}
+
+\section{Future directions}
+
+\printbibliography[heading=bibintoc]
+
+\end{document}
